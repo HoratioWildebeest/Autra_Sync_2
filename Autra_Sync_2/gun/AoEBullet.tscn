@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://gun/AoEBullet.cs" type="Script" id=1]
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.618159
+
+[sub_resource type="SphereMesh" id=2]
+
+[sub_resource type="SphereShape" id=3]
+radius = 2.28995
+
+[node name="AoEBullet" type="Area"]
+collision_mask = 3
+script = ExtResource( 1 )
+Lifetime = 4.0
+Speed = 20.0
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Explosion" type="Area" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="Explosion"]
+shape = SubResource( 3 )
+
+[node name="RayCast" type="RayCast" parent="."]
+collision_mask = 2
+collide_with_areas = true
+[connection signal="body_entered" from="." to="." method="_onBodyEntered"]

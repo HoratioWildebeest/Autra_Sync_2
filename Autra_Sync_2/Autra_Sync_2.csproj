@@ -57,8 +57,10 @@
     <Compile Include="gun\AoEBullet.cs" />
     <Compile Include="gun\Bullet.cs" />
     <Compile Include="player\CameraLock.cs" />
+    <Compile Include="player\MeshAnimation.cs" />
     <Compile Include="player\Player.cs" />
     <Compile Include="player\RotationGrid.cs" />
+    <Compile Include="player\singletons\InputManager.cs" />
     <Compile Include="player\WeaponLock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

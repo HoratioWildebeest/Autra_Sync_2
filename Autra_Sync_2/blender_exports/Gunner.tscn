@@ -1,22 +1,14 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://player/Player.cs" type="Script" id=1]
-[ext_resource path="res://player/CameraLock.cs" type="Script" id=2]
-[ext_resource path="res://player/WeaponLock.cs" type="Script" id=3]
+[ext_resource path="res://blender_exports/Material.material" type="Material" id=1]
+[ext_resource path="res://blender_exports/RunShoot.anim" type="Animation" id=2]
+[ext_resource path="res://blender_exports/StandShoot.anim" type="Animation" id=3]
 [ext_resource path="res://blender_exports/Stand.anim" type="Animation" id=4]
 [ext_resource path="res://blender_exports/Run.anim" type="Animation" id=5]
-[ext_resource path="res://blender_exports/StandShoot.anim" type="Animation" id=6]
-[ext_resource path="res://blender_exports/JumpShoot.anim" type="Animation" id=7]
-[ext_resource path="res://blender_exports/Jump.anim" type="Animation" id=8]
-[ext_resource path="res://blender_exports/RunShoot.anim" type="Animation" id=9]
-[ext_resource path="res://blender_exports/Material.material" type="Material" id=10]
-[ext_resource path="res://player/MeshAnimation.cs" type="Script" id=11]
+[ext_resource path="res://blender_exports/JumpShoot.anim" type="Animation" id=6]
+[ext_resource path="res://blender_exports/Jump.anim" type="Animation" id=7]
 
-[sub_resource type="CylinderShape" id=1]
-radius = 0.321127
-height = 1.66151
-
-[sub_resource type="ArrayMesh" id=2]
+[sub_resource type="ArrayMesh" id=1]
 resource_name = "Body"
 surfaces/0 = {
 "aabb": AABB( -0.213583, 0.621004, -0.144276, 0.433474, 1.15326, 0.26995 ),
@@ -25,13 +17,13 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97495,
 "index_count": 0,
-"material": ExtResource( 10 ),
+"material": ExtResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( -0.152101, 0.923298, -0.12498, 0.31051, 0.310244, 0.226901 ), AABB( -0.213583, 0.993534, -0.144276, 0.433474, 0.652218, 0.26995 ), AABB( -0.213583, 1.36393, -0.144276, 0.433474, 0.388797, 0.26995 ), AABB( -0.0769653, 1.64191, -0.0866961, 0.16024, 0.13235, 0.109832 ), AABB( -0.0505745, 1.68895, -0.0607851, 0.107468, 0.0853181, 0.075284 ), AABB( 0.00315443, 1.36393, -0.144276, 0.216737, 0.338455, 0.26995 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.213583, 1.36393, -0.144276, 0.216747, 0.338455, 0.26995 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0.00315443, 0.621004, -0.12498, 0.191553, 0.6138, 0.226901 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.188398, 0.621004, -0.12498, 0.191563, 0.6138, 0.226901 ) ],
 "vertex_count": 1200
 }
 
-[sub_resource type="Skin" id=3]
+[sub_resource type="Skin" id=2]
 resource_name = "Skin"
 bind_count = 25
 bind/0/bone = 0
@@ -85,7 +77,7 @@ bind/23/pose = Transform( -4.65449, 0.140841, -0.00136736, -1.83672e-10, -0.0452
 bind/24/bone = 24
 bind/24/pose = Transform( 4.65662, -0.000317278, 1.61802e-06, 1.25581e-08, 0.0239313, 4.65656, -0.000319745, -4.6927, 0.0239313, 0.638484, -1.76624, 2.75013 )
 
-[sub_resource type="ArrayMesh" id=4]
+[sub_resource type="ArrayMesh" id=3]
 resource_name = "Cube"
 surfaces/0 = {
 "aabb": AABB( -0.188358, 0.0954319, -0.0937366, 0.384941, 0.460091, 0.127575 ),
@@ -99,7 +91,7 @@ surfaces/0 = {
 "vertex_count": 384
 }
 
-[sub_resource type="ArrayMesh" id=5]
+[sub_resource type="ArrayMesh" id=4]
 resource_name = "Cube001"
 surfaces/0 = {
 "aabb": AABB( -0.0837133, 1.69615, -0.0923133, 0.173746, 0.23031, 0.192323 ),
@@ -113,7 +105,7 @@ surfaces/0 = {
 "vertex_count": 96
 }
 
-[sub_resource type="ArrayMesh" id=6]
+[sub_resource type="ArrayMesh" id=5]
 resource_name = "Cube002"
 surfaces/0 = {
 "aabb": AABB( -0.396093, 1.25105, -0.10184, 0.80041, 0.303838, 0.150384 ),
@@ -127,7 +119,7 @@ surfaces/0 = {
 "vertex_count": 372
 }
 
-[sub_resource type="ArrayMesh" id=7]
+[sub_resource type="ArrayMesh" id=6]
 resource_name = "Cube003"
 surfaces/0 = {
 "aabb": AABB( -0.180312, 0.00419303, -0.0918241, 0.368849, 0.0947424, 0.214712 ),
@@ -141,7 +133,7 @@ surfaces/0 = {
 "vertex_count": 384
 }
 
-[sub_resource type="ArrayMesh" id=8]
+[sub_resource type="ArrayMesh" id=7]
 resource_name = "Cube004"
 surfaces/0 = {
 "aabb": AABB( -0.452396, 0.970833, -0.0712736, 0.913018, 0.281827, 0.0933146 ),
@@ -155,7 +147,7 @@ surfaces/0 = {
 "vertex_count": 192
 }
 
-[sub_resource type="ArrayMesh" id=9]
+[sub_resource type="ArrayMesh" id=8]
 resource_name = "Gun"
 surfaces/0 = {
 "aabb": AABB( -0.483706, 0.67075, -0.071863, 0.0696729, 0.296877, 0.164793 ),
@@ -169,7 +161,7 @@ surfaces/0 = {
 "vertex_count": 234
 }
 
-[sub_resource type="ArrayMesh" id=10]
+[sub_resource type="ArrayMesh" id=9]
 resource_name = "Hands"
 surfaces/0 = {
 "aabb": AABB( -0.491266, 0.86989, -0.0724573, 0.990757, 0.107722, 0.0916326 ),
@@ -183,7 +175,7 @@ surfaces/0 = {
 "vertex_count": 120
 }
 
-[sub_resource type="ArrayMesh" id=11]
+[sub_resource type="ArrayMesh" id=10]
 resource_name = "Icosphere"
 surfaces/0 = {
 "aabb": AABB( -0.271442, 1.49879, -0.0710298, 0.551109, 0.104366, 0.0887777 ),
@@ -197,7 +189,7 @@ surfaces/0 = {
 "vertex_count": 120
 }
 
-[sub_resource type="ArrayMesh" id=12]
+[sub_resource type="ArrayMesh" id=11]
 resource_name = "Icosphere001"
 surfaces/0 = {
 "aabb": AABB( -0.393722, 1.22257, -0.0561263, 0.795669, 0.069325, 0.0589706 ),
@@ -211,7 +203,7 @@ surfaces/0 = {
 "vertex_count": 120
 }
 
-[sub_resource type="ArrayMesh" id=13]
+[sub_resource type="ArrayMesh" id=12]
 resource_name = "Icosphere003"
 surfaces/0 = {
 "aabb": AABB( -0.180048, 0.520221, -0.0619019, 0.368321, 0.13306, 0.113186 ),
@@ -225,82 +217,14 @@ surfaces/0 = {
 "vertex_count": 120
 }
 
-[sub_resource type="AnimationNodeAnimation" id=14]
-animation = "Jump"
+[node name="Gunner" type="Spatial"]
 
-[sub_resource type="AnimationNodeAnimation" id=15]
-animation = "JumpShoot"
+[node name="choppy_gunner" type="Spatial" parent="."]
 
-[sub_resource type="AnimationNodeAnimation" id=16]
-animation = "Run"
-
-[sub_resource type="AnimationNodeAnimation" id=17]
-animation = "RunShoot"
-
-[sub_resource type="AnimationNodeAnimation" id=18]
-animation = "Stand"
-
-[sub_resource type="AnimationNodeAnimation" id=19]
-animation = "StandShoot"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=20]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=22]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=23]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=24]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=25]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=26]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=27]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=28]
-advance_condition = "jump"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=29]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=30]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=31]
-advance_condition = "jump"
-
-[sub_resource type="AnimationNodeStateMachine" id=32]
-states/Jump/node = SubResource( 14 )
-states/Jump/position = Vector2( 177, 418 )
-states/JumpShoot/node = SubResource( 15 )
-states/JumpShoot/position = Vector2( 177, 306 )
-states/Run/node = SubResource( 16 )
-states/Run/position = Vector2( 627, 69 )
-states/RunShoot/node = SubResource( 17 )
-states/RunShoot/position = Vector2( 286, 174 )
-states/Stand/node = SubResource( 18 )
-states/Stand/position = Vector2( -238.277, 69 )
-states/StandShoot/node = SubResource( 19 )
-states/StandShoot/position = Vector2( 39.7226, 174 )
-transitions = [ "Jump", "Run", SubResource( 20 ), "StandShoot", "RunShoot", SubResource( 21 ), "RunShoot", "StandShoot", SubResource( 22 ), "JumpShoot", "RunShoot", SubResource( 23 ), "RunShoot", "JumpShoot", SubResource( 24 ), "JumpShoot", "StandShoot", SubResource( 25 ), "StandShoot", "JumpShoot", SubResource( 26 ), "Stand", "Run", SubResource( 27 ), "Stand", "Jump", SubResource( 28 ), "Run", "Stand", SubResource( 29 ), "Jump", "Stand", SubResource( 30 ), "Run", "Jump", SubResource( 31 ) ]
-graph_offset = Vector2( -338.826, -69.59 )
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=33]
-
-[node name="Player" type="KinematicBody"]
-script = ExtResource( 1 )
-
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.831187, 0 )
-shape = SubResource( 1 )
-
-[node name="Mesh" type="Spatial" parent="."]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
-
-[node name="Armature" type="Spatial" parent="Mesh"]
+[node name="Armature" type="Spatial" parent="choppy_gunner"]
 transform = Transform( 0.214748, 0, 0, 0, 0.214748, 0, 0, 0, 0.214748, 0, 0.99354, 0 )
 
-[node name="Skeleton" type="Skeleton" parent="Mesh/Armature"]
+[node name="Skeleton" type="Skeleton" parent="choppy_gunner/Armature"]
 bones/0/name = "hip"
 bones/0/parent = -1
 bones/0/rest = Transform( 0.999987, -0.00514527, 1.87213e-05, 0.00506859, 0.984445, -0.175621, 0.000885189, 0.175619, 0.984458, -3.48109e-10, -0.717573, 0.0623976 )
@@ -427,92 +351,65 @@ bones/24/rest = Transform( 1, 6.69388e-10, -6.76103e-05, -6.81342e-05, 0.0051192
 bones/24/enabled = true
 bones/24/bound_children = [  ]
 
-[node name="Body" type="MeshInstance" parent="Mesh/Armature/Skeleton"]
-mesh = SubResource( 2 )
-skin = SubResource( 3 )
+[node name="Body" type="MeshInstance" parent="choppy_gunner/Armature/Skeleton"]
+mesh = SubResource( 1 )
+skin = SubResource( 2 )
 material/0 = null
 
-[node name="Cube" type="MeshInstance" parent="Mesh/Armature/Skeleton"]
+[node name="Cube" type="MeshInstance" parent="choppy_gunner/Armature/Skeleton"]
+mesh = SubResource( 3 )
+skin = SubResource( 2 )
+material/0 = null
+
+[node name="Cube001" type="MeshInstance" parent="choppy_gunner/Armature/Skeleton"]
 mesh = SubResource( 4 )
-skin = SubResource( 3 )
+skin = SubResource( 2 )
 material/0 = null
 
-[node name="Cube001" type="MeshInstance" parent="Mesh/Armature/Skeleton"]
+[node name="Cube002" type="MeshInstance" parent="choppy_gunner/Armature/Skeleton"]
 mesh = SubResource( 5 )
-skin = SubResource( 3 )
+skin = SubResource( 2 )
 material/0 = null
 
-[node name="Cube002" type="MeshInstance" parent="Mesh/Armature/Skeleton"]
+[node name="Cube003" type="MeshInstance" parent="choppy_gunner/Armature/Skeleton"]
 mesh = SubResource( 6 )
-skin = SubResource( 3 )
+skin = SubResource( 2 )
 material/0 = null
 
-[node name="Cube003" type="MeshInstance" parent="Mesh/Armature/Skeleton"]
+[node name="Cube004" type="MeshInstance" parent="choppy_gunner/Armature/Skeleton"]
 mesh = SubResource( 7 )
-skin = SubResource( 3 )
+skin = SubResource( 2 )
 material/0 = null
 
-[node name="Cube004" type="MeshInstance" parent="Mesh/Armature/Skeleton"]
+[node name="Gun" type="MeshInstance" parent="choppy_gunner/Armature/Skeleton"]
 mesh = SubResource( 8 )
-skin = SubResource( 3 )
+skin = SubResource( 2 )
 material/0 = null
 
-[node name="Gun" type="MeshInstance" parent="Mesh/Armature/Skeleton"]
+[node name="Hands" type="MeshInstance" parent="choppy_gunner/Armature/Skeleton"]
 mesh = SubResource( 9 )
-skin = SubResource( 3 )
+skin = SubResource( 2 )
 material/0 = null
 
-[node name="Hands" type="MeshInstance" parent="Mesh/Armature/Skeleton"]
+[node name="Icosphere" type="MeshInstance" parent="choppy_gunner/Armature/Skeleton"]
 mesh = SubResource( 10 )
-skin = SubResource( 3 )
+skin = SubResource( 2 )
 material/0 = null
 
-[node name="Icosphere" type="MeshInstance" parent="Mesh/Armature/Skeleton"]
+[node name="Icosphere001" type="MeshInstance" parent="choppy_gunner/Armature/Skeleton"]
 mesh = SubResource( 11 )
-skin = SubResource( 3 )
+skin = SubResource( 2 )
 material/0 = null
 
-[node name="Icosphere001" type="MeshInstance" parent="Mesh/Armature/Skeleton"]
+[node name="Icosphere003" type="MeshInstance" parent="choppy_gunner/Armature/Skeleton"]
 mesh = SubResource( 12 )
-skin = SubResource( 3 )
+skin = SubResource( 2 )
 material/0 = null
 
-[node name="Icosphere003" type="MeshInstance" parent="Mesh/Armature/Skeleton"]
-mesh = SubResource( 13 )
-skin = SubResource( 3 )
-material/0 = null
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Mesh"]
-anims/Jump = ExtResource( 8 )
-anims/JumpShoot = ExtResource( 7 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="choppy_gunner"]
+anims/Jump = ExtResource( 7 )
+anims/JumpShoot = ExtResource( 6 )
 anims/Run = ExtResource( 5 )
-anims/RunShoot = ExtResource( 9 )
+anims/RunShoot = ExtResource( 2 )
 anims/Stand = ExtResource( 4 )
-anims/StandShoot = ExtResource( 6 )
-script = ExtResource( 11 )
-PlayerPath = NodePath("../..")
-
-[node name="AnimationTree" type="AnimationTree" parent="Mesh"]
-tree_root = SubResource( 32 )
-anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 33 )
-parameters/conditions/jump = false
-
-[node name="CameraLock" type="Spatial" parent="."]
-script = ExtResource( 2 )
-MeshPath = NodePath("../Mesh")
-
-[node name="CameraTarget" type="Spatial" parent="CameraLock"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.031, 2.543 )
-
-[node name="WeaponLock" type="Spatial" parent="CameraLock"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04076, -0.966924 )
-script = ExtResource( 3 )
-
-[node name="Camera" type="InterpolatedCamera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.01098, 2.543 )
-current = true
-target = NodePath("../CameraLock/CameraTarget")
-speed = 10.0
-enabled = true
-[connection signal="animation_finished" from="Mesh/AnimationPlayer" to="Mesh/AnimationPlayer" method="_on_AnimationPlayer_animation_finished"]
+anims/StandShoot = ExtResource( 3 )

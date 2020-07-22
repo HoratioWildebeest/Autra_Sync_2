@@ -1,15 +1,15 @@
 ﻿using Godot;
-using GDC = Godot.Collections;
+using Array = Godot.Collections.Array;
 using System;
 
 class AoEBullet : Bullet {
    [Export] new public float Gravity = .02f;
    
-   Area _explosionHitbox;
+   Area explosionHitbox;
    RayCast explodeConnectionCheck;
 
    public override void _Ready() {
-      _explosionHitbox = GetNode<Area>("Explosion");
+      explosionHitbox = GetNode<Area>("Explosion");
       explodeConnectionCheck = GetNode<RayCast>("RayCast");
    }
 
@@ -24,7 +24,7 @@ class AoEBullet : Bullet {
    }
 
    void Explode() {
-      GDC.Array affected = _explosionHitbox.GetOverlappingAreas();
+      Array affected = explosionHitbox.GetOverlappingAreas();
       for (int i = 0; i < affected.Count; i++) {
          if (affected[i] is GenericTarget) {
             GenericTarget target = affected[i] as GenericTarget;

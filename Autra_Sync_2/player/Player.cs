@@ -10,9 +10,11 @@ public class Player : KinematicBody {
 
    CameraLock CameraLock;
    WeaponLock WeaponLock;
+   Spatial Mesh;
 
    Vector3 _moveDirection = new Vector3();
    bool _jumping = false;
+   bool isShooting = false;
    Vector3 _velocity = new Vector3();
 
    public override void _Ready() {
@@ -46,8 +48,24 @@ public class Player : KinematicBody {
       }
 
       if (Input.IsActionJustPressed("shoot")) {
+         isShooting = true;
          WeaponLock.UseWeapon();
+      } else if (Input.IsActionJustReleased("shoot")) {
+         isShooting = false;
       }
+   }
+
+   public bool IsMoving() {
+      return _moveDirection != Vector3.Zero;
+   }
+
+   public bool IsJumping() {
+      var collision = MoveAndCollide(new Vector3(0f, -.1f, 0f), false, true, true);
+      return collision is null;
+   }
+
+   public bool IsShooting() {
+      return isShooting;
    }
 
    void InputMovement() {
